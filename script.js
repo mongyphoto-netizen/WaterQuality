@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // =========================================================
             // TODO: แทนที่ URL ด้านล่างด้วย URL Web App ของคุณจาก Google Apps Script
             // =========================================================
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-49o9frMVh6Y0booSsm_JEHwV3UtT5QTDfYRemPIsD2tCiW3E3T1xRBWnQHcWlsZC/exec';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO1dEzQ0mvHGVlcWGcGW5afpekin092XzSXst0qeSefdDBP9FPDhT_Hfei32yEKGRM-w/exec';
             
             if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL') {
                 // ส่งข้อมูลจริงไปยัง Google Sheets
