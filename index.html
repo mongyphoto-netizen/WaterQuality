@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประเมินคุณภาพน้ำชุมชน</title>
+    <!-- Google Fonts: Prompt for Thai typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>ประเมินสถานการณ์คุณภาพน้ำ</h1>
+            <p>ใบงานที่ 2: การตรวจสอบคุณภาพน้ำต้นทุนและน้ำประปาชุมชน</p>
+        </header>
+
+        <section class="form-container glass-panel">
+            <form id="waterQualityForm">
+                
+                <!-- 1. กลุ่มที่ -->
+                <div class="form-group">
+                    <label for="groupNumber">1. ท่านอยู่กลุ่มที่เท่าไหร่? <span class="required">*</span></label>
+                    <div class="custom-select-wrapper">
+                        <select id="groupNumber" name="groupNumber" required>
+                            <option value="" disabled selected>-- โปรดเลือกกลุ่ม --</option>
+                            <option value="กลุ่มที่ 1 - ประปาส่วนภูมิภาค">กลุ่มที่ 1 - ประปาส่วนภูมิภาค</option>
+                            <option value="กลุ่มที่ 2 - ประปาส่วนท้องถิ่น">กลุ่มที่ 2 - ประปาส่วนท้องถิ่น</option>
+                            <option value="กลุ่มที่ 3 - ประปาชุมชนผิวดิน">กลุ่มที่ 3 - ประปาชุมชนผิวดิน</option>
+                            <option value="กลุ่มที่ 4 - ประปาชุมชนบาดาล">กลุ่มที่ 4 - ประปาชุมชนบาดาล</option>
+                            <option value="กลุ่มที่ 5 - ประปาภูเขา / พื้นที่ไม่มีระบบประปา / พื้นที่หาน้ำยาก">กลุ่มที่ 5 - ประปาภูเขา / พื้นที่ไม่มีระบบประปา / พื้นที่หาน้ำยาก</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 2. พื้นที่ -->
+                <div class="form-group">
+                    <label for="area">2. พื้นที่ / หมู่บ้าน / ชุมชน ที่ประเมิน <span class="required">*</span></label>
+                    <input type="text" id="area" name="area" placeholder="ระบุชื่อหมู่บ้าน หรือ ตำบล" required>
+                </div>
+
+                <!-- 3. สถานการณ์ปัจจุบัน -->
+                <div class="form-group">
+                    <label>3. สถานการณ์ปัจจุบัน: พื้นที่นี้มีการตรวจสอบคุณภาพน้ำ (ต้นทุน/ประปา) หรือไม่? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="currentStatus" value="มีการตรวจสอบอย่างสม่ำเสมอ" required>
+                            <span class="custom-radio"></span>
+                            มีการตรวจสอบอย่างสม่ำเสมอ
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="currentStatus" value="มีการตรวจสอบบ้าง แต่ไม่สม่ำเสมอ">
+                            <span class="custom-radio"></span>
+                            มีการตรวจสอบบ้าง แต่ไม่สม่ำเสมอ
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="currentStatus" value="ยังไม่มีการตรวจสอบเลย">
+                            <span class="custom-radio"></span>
+                            ยังไม่มีการตรวจสอบเลย
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. ปัญหาที่พบ -->
+                <div class="form-group">
+                    <label for="problems">4. ปัญหาที่พบเกี่ยวกับคุณภาพน้ำ (ทั้งน้ำต้นทุนและน้ำประปา) <span class="required">*</span></label>
+                    <textarea id="problems" name="problems" rows="3" placeholder="เช่น น้ำมีสีขุ่น มีกลิ่นเหม็น หรือปริมาณไม่เพียงพอ" required></textarea>
+                </div>
+
+                <!-- 5. สาเหตุหลัก -->
+                <div class="form-group">
+                    <label for="causes">5. สาเหตุหลักของปัญหาดังกล่าวคืออะไร? <span class="required">*</span></label>
+                    <textarea id="causes" name="causes" rows="3" placeholder="เช่น แหล่งน้ำตื้นเขิน ท่อประปาเก่าชำรุด" required></textarea>
+                </div>
+
+                <!-- 6. อุปสรรคสำคัญ -->
+                <div class="form-group">
+                    <label>6. อุปสรรคสำคัญในการจัดการ/ตรวจสอบคุณภาพน้ำคืออะไร? (เลือกได้มากกว่า 1 ข้อ) <span class="required">*</span></label>
+                    <div class="checkbox-group" id="obstacleGroup">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="obstacles" value="ขาดแคลนเครื่องมือ/ชุดตรวจคุณภาพน้ำ">
+                            <span class="custom-checkbox"></span>
+                            ขาดแคลนเครื่องมือ/ชุดตรวจคุณภาพน้ำ
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="obstacles" value="ขาดแคลนงบประมาณ">
+                            <span class="custom-checkbox"></span>
+                            ขาดแคลนงบประมาณ
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="obstacles" value="ขาดแคลนบุคลากร/เจ้าหน้าที่">
+                            <span class="custom-checkbox"></span>
+                            ขาดแคลนบุคลากร/เจ้าหน้าที่
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="obstacles" value="ขาดความรู้ความเข้าใจในการตรวจสอบ">
+                            <span class="custom-checkbox"></span>
+                            ขาดความรู้ความเข้าใจในการตรวจสอบ
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="obstacleOtherCb" value="อื่นๆ">
+                            <span class="custom-checkbox"></span>
+                            อื่นๆ
+                        </label>
+                        <input type="text" id="obstacleOtherText" class="other-input" placeholder="โปรดระบุเพิ่มเติม..." style="display: none;">
+                    </div>
+                </div>
+
+                <!-- 7. หน่วยงาน -->
+                <div class="form-group">
+                    <label for="agency">7. อยากได้รับการสนับสนุนจากหน่วยงานใด เพื่อแก้ปัญหา <span class="required">*</span></label>
+                    <input type="text" id="agency" name="agency" placeholder="เช่น การประปาภูมิภาค กรมควบคุมมลพิษ กรมอนามัย ท้องถิ่น จังหวัด" required>
+                </div>
+
+                <!-- 8. กิจกรรม -->
+                <div class="form-group">
+                    <label>8. กิจกรรมที่ชุมชนต้องการให้เกิดขึ้นเพื่อแก้ไขปัญหา (เลือกได้มากกว่า 1 ข้อ) <span class="required">*</span></label>
+                    <div class="checkbox-group" id="activityGroup">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="activities" value="จัดหาชุดตรวจคุณภาพน้ำเบื้องต้น">
+                            <span class="custom-checkbox"></span>
+                            จัดหาชุดตรวจคุณภาพน้ำเบื้องต้น
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="activities" value="จัดอบรมให้ความรู้ผู้ดูแลระบบประปา">
+                            <span class="custom-checkbox"></span>
+                            จัดอบรมให้ความรู้ผู้ดูแลระบบประปา
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="activities" value="พัฒนาระบบรายงานผลคุณภาพน้ำ (Dashboard) ให้ชุมชนเข้าถึงได้">
+                            <span class="custom-checkbox"></span>
+                            พัฒนาระบบรายงานผลคุณภาพน้ำ (Dashboard) ให้ชุมชนเข้าถึงได้
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="activityOtherCb" value="อื่นๆ">
+                            <span class="custom-checkbox"></span>
+                            อื่นๆ
+                        </label>
+                        <input type="text" id="activityOtherText" class="other-input" placeholder="โปรดระบุกิจกรรมอื่นๆ..." style="display: none;">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn-primary">
+                        <span class="btn-text">บันทึกข้อมูล</span>
+                        <div class="loader" style="display: none;"></div>
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Success Message Container -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h3>บันทึกข้อมูลสำเร็จ!</h3>
+                <p>ขอบคุณที่ร่วมประเมินคุณภาพน้ำชุมชน ข้อมูลของคุณถูกส่งไปยังระบบเรียบร้อยแล้ว</p>
+                <button id="resetBtn" class="btn-secondary">กรอกข้อมูลพื้นที่อื่น</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
