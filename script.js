@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = {
             groupNumber: formData.get('groupNumber'),
             area: formData.get('area'),
+            subdistrict: formData.get('subdistrict'),
             currentStatus: formData.get('currentStatus'),
             problems: formData.get('problems'),
             causes: formData.get('causes'),
